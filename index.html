@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kafe Senja - Menu Digital</title>
+    <!-- Menghubungkan file stylesheet eksternal (CSS) -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Bagian Header / Kepala Website -->
+    <header class="header">
+        <h1>☕ Kafe Senja</h1>
+        <p>Silakan pilih menu favorit Anda di bawah ini</p>
+    </header>
+
+    <!-- Bagian Tombol Filter Kategori -->
+    <nav class="category-nav">
+        <!-- Tombol untuk memfilter kategori produk menggunakan JavaScript -->
+        <button class="filter-btn active" onclick="filterMenu('all')">Semua</button>
+        <button class="filter-btn" onclick="filterMenu('makanan')">Makanan</button>
+        <button class="filter-btn" onclick="filterMenu('minuman')">Minuman</button>
+        <button class="filter-btn" onclick="filterMenu('dessert')">Dessert</button>
+    </nav>
+
+    <!-- Bagian Daftar Menu (Katalog Produk) -->
+    <main class="menu-container">
+        
+        <!-- Item Menu 1: Makanan -->
+        <div class="menu-card" data-category="makanan">
+            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80" alt="Burger Sapi Spesial">
+            <div class="menu-info">
+                <h3>Burger Sapi Spesial</h3>
+                <p class="description">Burger dengan daging sapi pilihan, keju leleh, dan saus rahasia kafe.</p>
+                <div class="price-action">
+                    <span class="price">Rp 35.000</span>
+                    <button class="order-btn" onclick="tambahPesanan('Burger Sapi Spesial', 35000)">Tambah</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Item Menu 2: Minuman -->
+        <div class="menu-card" data-category="minuman">
+            <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=500&q=80" alt="Kopi Susu Senja">
+            <div class="menu-info">
+                <h3>Kopi Susu Senja</h3>
+                <p class="description">Espresso pilihan berpadu dengan fresh milk dan gula aren murni.</p>
+                <div class="price-action">
+                    <span class="price">Rp 20.000</span>
+                    <button class="order-btn" onclick="tambahPesanan('Kopi Susu Senja', 20000)">Tambah</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Item Menu 3: Dessert -->
+        <div class="menu-card" data-category="dessert">
+            <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=500&q=80" alt="Chocolate Brownie">
+            <div class="menu-info">
+                <h3>Chocolate Brownie</h3>
+                <p class="description">Kue cokelat panggang yang lembut dengan taburan kacang almon.</p>
+                <div class="price-action">
+                    <span class="price">Rp 25.000</span>
+                    <button class="order-btn" onclick="tambahPesanan('Chocolate Brownie', 25000)">Tambah</button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Bagian Keranjang Ringkas / Total Pesanan -->
+    <footer class="cart-footer">
+        <div class="cart-info">
+            <span>Total Item: <strong id="cart-count">0</strong></span>
+            <span>Total Harga: <strong id="cart-total">Rp 0</strong></span>
+        </div>
+        <button class="checkout-btn" onclick="prosesPesanan()">Pesan Sekarang</button>
+    </footer>
+
+    <!-- Menghubungkan file logika eksternal (JavaScript) -->
+    <script src="script.js"></script>
+</body>
+</html>
